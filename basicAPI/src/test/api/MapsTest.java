@@ -23,6 +23,7 @@ public class MapsTest {
         System.out.println("之前的值: " + previousValue);
 
         // 遍历键值对
+        // 这个Entry类是Map接口的一个内部接口，表示映射中的键值对
         for (java.util.Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }

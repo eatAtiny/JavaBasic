@@ -3,6 +3,8 @@ package test.api;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * list是Java中常用的数据结构之一，是一种线性表结构
@@ -43,6 +45,11 @@ public class ListTest {
 
     @Test
     public void arrayListDemo() {
+        //静态创建
+        // 创建一个ArrayList，存储字符串类型的元素
+        ArrayList<String> alist =new ArrayList<>(List.of("a","b","c"));
+
+
         // ArrayList是一个动态数组，支持自动扩容
         java.util.ArrayList<String> list = new ArrayList<>();
 
