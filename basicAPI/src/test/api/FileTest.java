@@ -18,6 +18,15 @@ public class FileTest {
             System.out.println("文件不存在");
         }
 
+        // 检查文件是否是一个目录
+        if (file.isDirectory()) {
+            System.out.println("这是一个目录");
+        } else if (file.isFile()) {
+            System.out.println("这是一个文件");
+        } else {
+            System.out.println("这不是一个文件或目录");
+        }
+
         // 创建新文件
         try {
             if (file.createNewFile()) {
@@ -44,6 +53,24 @@ public class FileTest {
             System.out.println("文件删除成功");
         } else {
             System.out.println("文件删除失败或文件不存在");
+        }
+
+        // 创建一个目录
+        File dir = new File("exampleDir");
+        if (dir.mkdir()) {
+            System.out.println("目录创建成功");
+        } else {
+            System.out.println("目录已存在或创建失败");
+        }
+        // 列出目录中的文件和子目录
+        File[] files = dir.listFiles(); // 获取目录中的所有文件和子目录，指定的目录必须存在，而且必须是目录，不能是文件
+        if (files != null) {
+            System.out.println("目录中的文件和子目录:");
+            for (File f : files) {
+                System.out.println(f.getName() + (f.isDirectory() ? " [目录]" : " [文件]"));
+            }
+        } else {
+            System.out.println("目录为空或无法访问");
         }
     }
 
