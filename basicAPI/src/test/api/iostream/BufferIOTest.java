@@ -36,4 +36,24 @@ public class BufferIOTest {
 
 
     }
+
+    public void bufferRW() {
+        // BufferedReader和BufferedWriter是Java中用于处理文本文件读写的类，位于java.io包中。
+        // 主要用于提高读写效率，提供缓冲功能。
+        // BufferedReader和BufferedWriter是对Reader和Writer的包装，
+        // 其在内部维护了一个缓冲区，默认大小为8192字节（8KB），可以提高读写效率。
+
+        // 示例代码：使用BufferedReader和BufferedWriter进行文本文件读写
+        try (BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+             BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) { // 逐行读取文件内容
+                bw.write(line); // 将读取的内容写入到输出文件
+                bw.newLine(); // 写入换行符
+            }
+            System.out.println("缓冲文本文件读写操作完成");
+        } catch (IOException e) {
+            e.printStackTrace(); // 捕获并打印异常信息
+        }
+    }
 }
