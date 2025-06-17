@@ -15,6 +15,16 @@ public class ThreadTest3 implements Callable<String> {
     public String call() throws Exception {
         // 执行任务并返回结果
         return "Callable thread result";
+        // thread常用方法
+        // Thread.sleep(1000); // 让线程休眠1秒
+        // Thread.yield(); // 让当前线程让出CPU时间片
+        // Thread.currentThread().getName(); // 获取当前线程的名称
+        // Thread.currentThread().getId(); // 获取当前线程的ID
+        // Thread.currentThread().isAlive(); // 检查当前线程是否存活
+        // Thread.currentThread().interrupt(); // 中断当前线程
+        // Thread.currentThread().isInterrupted(); // 检查当前线程是否被中断
+        // Thread t = Thread.currentThread(); // 获取当前线程对象
+        // t.setName("MyThread"); // 设置线程名称
     }
 
     public static void main(String[] args) {

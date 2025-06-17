@@ -16,6 +16,11 @@ public class ThreadTest1 extends Thread{
     public static void main(String[] args) {
         ThreadTest1 thread = new ThreadTest1();
         thread.start(); // 启动线程，调用run()方法
+        try {
+            thread.join(); // 等待线程执行完成，主线程会阻塞在这里，直到thread线程执行完毕
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("main thread");
     }
 }
